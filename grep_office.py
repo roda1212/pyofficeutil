@@ -123,6 +123,7 @@ def Grep(word, target, out, ignorecase):
     files = EnumOfficeFiles(target)
     word = word.lower() if ignorecase else word
     for file in files:
+        Log.Info(str(file))
         if IsOldExcelFile(file):
             results.extend(GrepOldExcelFile(word, file, ignorecase))
         elif IsExcelFile(file):
@@ -142,7 +143,7 @@ def Main():
     args = InitArgParser().parse_args()
 
     if not os.path.exists(args.target):
-        Log.Error(f"ディレクトリが見つかりません（{args.pdf_file}）")
+        Log.Error(f"ディレクトリが見つかりません（{args.target}）")
         return
 
     Grep(str(args.word), args.target, args.out, args.ignorecase)

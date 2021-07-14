@@ -44,7 +44,7 @@ def Main():
     args = InitArgParser().parse_args()
 
     if not os.path.exists(args.target):
-        Log.Error(f"ディレクトリが見つかりません（{args.pdf_file}）")
+        Log.Error(f"ディレクトリが見つかりません（{args.target}）")
         return
 
     Extract(args.target, args.outdir)

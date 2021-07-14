@@ -15,7 +15,7 @@ def InitArgParser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description='OfficeファイルのGrep検索')
     parser.add_argument('word', type=str, help='検索ワード')
     parser.add_argument('target', type=str, help='対象ディレクトリ')
-    parser.add_argument('-out', type=str, help='対象PDFファイル', default='grep_result.csv')
+    parser.add_argument('-out', type=str, help='結果CSVファイル', default='grep_result.csv')
     parser.add_argument('-ignorecase', type=bool, help='大文字小文字を無視（既定）', default=True)
     return parser
 

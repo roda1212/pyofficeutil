@@ -1,1 +1,3 @@
 venv/
+result_images/
+grep_result.csv
